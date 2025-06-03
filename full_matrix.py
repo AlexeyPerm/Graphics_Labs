@@ -24,7 +24,7 @@ for i in range(len(x)):
     y_full.append(d * (x[i] * sin_theta + y[i] * cos_theta + n))
 
 for i in range(len(x)):
-    print(f"{x_full[i]}\t{y_full[i]}")
+    print(f"{(x_full[i])}\t{y_full[i]}")
 
 # plt.plot(x_full, y_full, '')
 # plt.xlabel("Ось X")

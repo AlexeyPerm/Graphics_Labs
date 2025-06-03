@@ -89,11 +89,10 @@ y_control = [7.48, 6.84, 8.72, 10.29, 14.71, 15.35, 16.92, 20.23, 20.87, 18.99, 
 x_new, y_new = bspline_third_order(x_control, y_control)
 
 # Визуализация
-plt.figure(figsize=(10, 5))
+plt.figure(figsize=(10, 10))
 plt.plot(x_control, y_control, label='Контрольные точки')
 plt.plot(x_new, y_new, label='B-сплайн')
 plt.legend()
 plt.grid(True)
 
-plt.savefig('b_spline_full_matrix.png')
-plt.close('all')
+plt.show()
