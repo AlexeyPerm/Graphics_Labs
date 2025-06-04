@@ -1,5 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from fontTools.merge.util import first
+from matplotlib.lines import lineStyles
 
 
 # Функция для добавления крайних сегментов для замыкания сплайна
@@ -79,7 +81,7 @@ def bspline_third_order(x, y, num_points_per_segment=10):
     return np.array(x_spline), np.array(y_spline)
 
 
-# Контрольные точки
+# Координаты фигуры, преобразованной матрицей комплексного преобразования в задании 3.
 x_control = [-0.57, -0.31, 0.43, 0.53, 0.22, -0.04, 0.06, -0.17, -0.43, -1.17, -1.28, -1.12, -0.75, -0.83, -0.46, -0.30,
              -0.41, -0.15, 0.09, -0.28, -0.36, -0.73, -0.57]
 y_control = [7.48, 6.84, 8.72, 10.29, 14.71, 15.35, 16.92, 20.23, 20.87, 18.99, 17.42, 15.21, 16.15, 17.25, 18.19,
@@ -90,9 +92,10 @@ x_new, y_new = bspline_third_order(x_control, y_control)
 
 # Визуализация
 plt.figure(figsize=(10, 10))
-plt.plot(x_control, y_control, label='Контрольные точки')
+plt.plot(x_control, y_control, label='Базовая фигура', linestyle = '--', linewidth=1)
 plt.plot(x_new, y_new, label='B-сплайн')
 plt.legend()
 plt.grid(True)
 
 plt.show()
+#plt.savefig('b_spline_full_matrix.png')
